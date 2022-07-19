@@ -1,41 +1,32 @@
-from datasets import Dataset
-from transformers import AutoModel, AutoTokenizer, DataCollatorForLanguageModeling
+model = AutoModelWithLMHead.from_pretrained('prajjwal1/bert-small')
 
-dataset = Dataset.from_pandas(train_df)
-model = AutoModel.from_pretrained("roberta-base")
-tokenizer = AutoTokenizer.from_pretrained("roberta-base")
 
 data_collator = DataCollatorForLanguageModeling(
     tokenizer=tokenizer, mlm=True, mlm_probability=0.15
 )
 
+from transformers import Trainer, TrainingArguments
 
-training_args = TrainingArguments(
-      output_dir="./output-mlm",
-      evaluation_strategy="epoch",
-      learning_rate=args.lr,
-      weight_decay=0.01,
-      save_steps=10_000,
-      save_strategy='no',
-      per_device_train_batch_size= 64,
-      num_train_epochs= 1,
-      # report_to="wandb",
-      run_name=f'output-mlm-{args.exp_num}',
-      # logging_dir='./logs',
-      lr_scheduler_type='linear',
-      warmup_ratio=0.2,
-      logging_steps=500,
-      gradient_accumulation_steps= 4,
-      overwrite_output_dir=True,
+dataset= LineByLineTextDataset(
+    tokenizer = tokenizer,
+    file_path = './text.txt',
+    block_size = 128  # maximum sequence length
 )
 
-    trainer = Trainer(
-        model=model,
-        args=training_args,
-        train_dataset=tokenized_datasets["train"],
-        eval_dataset=tokenized_datasets['valid'],
-        data_collator=data_collator,
-        # optimizers=(optimizer, scheduler)
-    )
+print('No. of lines: ', len(dataset)) # No of lines in your datset
 
-    trainer.train()
+training_args = TrainingArguments(
+    output_dir='./',
+    overwrite_output_dir=True,
+    num_train_epochs=10,
+    per_device_train_batch_size=64,
+    save_steps=10000,
+)
+trainer = Trainer(
+    model=model,
+    args=training_args,
+    data_collator=data_collator,
+    train_dataset=dataset,
+)
+trainer.train()
+trainer.save_model('./')
