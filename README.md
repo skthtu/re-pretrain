@@ -1,7 +1,7 @@
 ### Pretrainedモデルの再事前学習のTips from [Kaggle Discussion of AI4Code](https://www.kaggle.com/competitions/AI4Code/discussion/335294)
 
-##### 　・Pre-train for as long as you can
-##### 　・More data is better than more epochs
+   　・Pre-train for as long as you can
+   　・More data is better than more epochs
 ##### 　・Masking 15% of the tokens seems to be the sweet spot
 ##### 　・Use an MLM probability schedule (e.g. start with 0.15 and decrease to 0.05 over the course of training)
 ##### 　・Don't forget to use a warmup scheduler (linear warmup is fine)
