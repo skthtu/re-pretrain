@@ -1,5 +1,5 @@
 ## Pretrainedモデルの再事前学習の実装
- 医療など特定の分野ではPretrainedモデルを該当ドメインのデータで再事前学習した方がいいのではないかという提案。
+ 医療など特定の分野ではPretrainedモデルを該当ドメインのデータで再事前学習した方がいいのではないかという提案。<br>
  元論文: Don't Stop Pretraining: [Adapt Language Models to Domains and Tasks, S.Gururangan et.al., ACL2020](https://arxiv.org/abs/2004.10964)
 
 ### 再事前学習時のTips from [Discussion of Kaggle AI4Code](https://www.kaggle.com/competitions/AI4Code/discussion/335294)
