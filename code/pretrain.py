@@ -38,6 +38,8 @@ training_args = TrainingArguments( #trainのargs
     save_strategy='epoch',
     
     num_train_epochs=10,
+    
+    fp16 = True, #混合精度学習のbool
 
     lr_scheduler_type='cosine', #大体cosineが最適な印象
     weight_decay=0.01,
