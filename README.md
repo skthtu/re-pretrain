@@ -21,7 +21,7 @@
 ・For language modeling, use DataCollatorForLanguageModeling<br>
 ・For permutation language modeling use DataCollatorForPermutationLanguageModeling<br>
 
-##References
+## References
 [NBME 1st Solution](https://www.kaggle.com/code/currypurin/nbme-mlm/)<br>
 [AI4Code Pairwise BertSmall Pretrain](https://www.kaggle.com/code/yuanzhezhou/ai4code-pairwise-bertsmall-pretrain/notebook)<br>
 [An Overview of the Various BERT Pre-Training Methods](https://medium.com/analytics-vidhya/an-overview-of-the-various-bert-pre-training-methods-c365512342d8)<br>
