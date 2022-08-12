@@ -1,4 +1,4 @@
-### Pretrainedモデルの再事前学習のTips from [Kaggle Discussion of AI4Code](https://www.kaggle.com/competitions/AI4Code/discussion/335294)
+### Pretrainedモデルの再事前学習のTips from [Discussion of Kaggle AI4Code](https://www.kaggle.com/competitions/AI4Code/discussion/335294)
 
 ・Pre-train for as long as you can <br>
 ・More data is better than more epochs <br>
