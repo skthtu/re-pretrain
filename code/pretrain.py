@@ -1,3 +1,5 @@
+#ref: https://www.kaggle.com/code/yuanzhezhou/ai4code-pairwise-bertsmall-pretrain/notebook, https://www.kaggle.com/code/currypurin/nbme-mlm/
+
 import json
 import numpy as np
 import pandas as pd
